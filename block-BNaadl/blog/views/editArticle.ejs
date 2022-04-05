@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Create article</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home Page</a>
+            <a href="/blogs">Blog Page</a>
+        </nav>
+
+    </header>
+    <main>
+        <form action="/blogs" method="POST">
+            <legend>Create Article</legend>
+            <input type="text" placeholder="Title" name="title" value="<%= article.title %>"d>
+            <textarea name="description" id="decription" cols="30" rows="7" placeholder="Decription"><%= article.description %> </textarea>
+            <input type="text" placeholder="Tags" name="tags" value="<%= article.tags">
+            <input type="text" name="likes" placeholder="0" value="article.likes">
+            <input type="submit" value="Create Article">
+        </form>
+        <div>
+            <a href="/blogs/edit/<%= article.id %>">Edit</a>
+            <a href="/blogs/delete/<%= article.id %>"></a>
+            
+        </div>
+    </main>
+    <footer>
+    </footer>
+        <script src="./script.js"></script>
+</body>
+</html>
