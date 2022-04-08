@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
     <title>title</title>
 </head>
 <body>
     <header>
+                <nav>
+            <a href="/">Home Page</a>
+            <a href="/articles">Blog Page</a>
+            <a href="/articles/new">Add articles</a>
+        </nav>
     </header>
     <main>
             <ul>
@@ -18,16 +22,13 @@
                     <li><%= articles.description %></li>
                     <li><%= articles.tags %></li>
                     <li><%= articles.author %></li>
-                    <li><%= articles.likes %></li>
                 </ul>
-                <a href="/blogs/<%= articles.id %>/like"><button>like</button></a>
-                <a href="/blogs/<%= articles.id %>/dislike"><button>dislike</button></a>
-                <a href="/blogs/<%= articles.id %>/edit"><button>edit</button></a>
-                <a href="/blogs/<%= articles.id %>/delete"><button>delete</button></a>
+                <a href="/articles/<%= articles.id %>/like"><button>Like <%= articles.likes %></button></a>
+                <a href="/articles/<%= articles.id %>/dislike"><button>dislike</button></a>
+                <a href="/articles/<%= articles.id %>/edit"><button>edit</button></a>
+                <a href="/articles/<%= articles.id %>/delete"><button>delete</button></a>
             </ul>
     </main>
     <footer>
-    </footer>
-        <script src="./script.js"></script>
 </body>
 </html>
