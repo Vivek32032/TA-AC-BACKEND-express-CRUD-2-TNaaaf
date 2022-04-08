@@ -5,8 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/blogs');
+var articlesRouter = require('./routes/articles');
+const { default: mongoose } = require('mongoose');
 
+// connect to database
+mongoose.connect("mongodb://localhost/blog",
+{useNewUrlParser : true, useUnifiedTopology : true},
+(err)=> console.log(err ? err : "Connected true"))
 var app = express();
 
 // view engine setup
@@ -20,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/blogs', usersRouter);
+app.use('/articles', articlesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
