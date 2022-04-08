@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Create article</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home Page</a>
+            <a href="/articles">Blog Page</a>
+        </nav>
+
+    </header>
+    <main>
+        <form action="/articles" method="POST" class="flex column">
+            <legend>Create Article</legend>
+            <input type="text" placeholder="Title" name="title" >
+            <textarea name="description" id="decription" cols="30" rows="7" placeholder="Decription"></textarea>
+            <input type="text" placeholder="Tags" name="tags">
+            <input type="text" name="likes" placeholder="0">
+            <input type="submit" value="Create Article">
+        </form>
+   
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
