@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>title</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home Page</a>
+            <a href="/articles">Blog Page</a>
+            <a href="/articles/new">Add articles</a>
+        </nav>
+    </header>
+    <main>
+            <ul>
+                <li><%= article.title %></li>
+                <ul>
+                    <li><%= article.description %></li>
+                    <li><%= article.tags %></li>
+                    <li><%= article.author %></li>
+                </ul>
+                <a href="/articles/<%= article.id %>/like"><button>Like <%= article.likes %></button></a>
+                <a href="/articles/<%= article.id %>/dislike"><button>dislike</button></a>
+                <a href="/articles/<%= article.id %>/edit"><button>edit</button></a>
+                <a href="/articles/<%= article.id %>/delete"><button>delete</button></a>
+            </ul>
+
+            <div class="take-comments">
+                <form class="flex column" action="/articles/<%= article.id %>/comments" method="POST">
+                <textarea name="content" id="" cols="30" rows="5" placeholder="Add a comment"></textarea>
+                <input type="submit" value="Add comments" class="btn"></form>
+            </div>
+           <div class="display-comments">
+              <h2>Comments</h2>
+              <% article.comments.forEach(comment => { %>
+                  <p><%= comment.content %></p>
+                  <a href="/comments/<%= comment.id %>/likes"><button>Like <%= comment.likes %></button></</a>
+                  <a href="/comments/<%= comment.id %>/dislikes"><button>Dislike <%= comment.dislikes %></button></s</a>
+                  <a href="/comments/<%= comment.id %>/edit">edit</a>
+                  <a href="/comments/<%= comment.id %>/delete">Delete</a>
+    
+              <% }) %>
+           </div>
+    </main>
+    <footer>
+</body>
+</html>
