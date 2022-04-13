@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Add Book</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="flex">
+                <li><a href="/">Home</a></li>
+                <li><a href="/books">Book-List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/books" method="POST">
+            <legend>Add book</legend>
+            <input type="text" name="title" placeholder="Enter Title">
+            <input type="text" name="summery" placeholder="Enter Summery">
+            <input type="text" name="pages" placeholder="Enter NO. of Pages">
+            <input type="text" name="publication" placeholder="Enter Publication Name" >
+            <input type="image" name="cover_image" alt="submit" src="/images/image-regular.svg" width="40px">
+            <select name="category" id="">
+                    <option value="fiction">Fiction</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="technology">Technology</option>
+                    <option value="motivation">Motivation</option>
+            </select>
+            <input type="submit" value="Add Book">
+        </form>
+
+    </main>
+
+</body>
+</html>
