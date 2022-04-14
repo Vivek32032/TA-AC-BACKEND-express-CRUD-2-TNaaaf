@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>title</title>
+</head>
+<body>
+    
+    <main>
+        <header class="flex"><a class="anchor" href="/">UserData</a> <a href="/books" class="anchor">Back</a> </header>
+
+        <form  class="flex column data-form" action="/comments/<%= comment.id %>" method="POST"> 
+            <legend>Update Comment</legend>
+            <textarea class="textarea" name="content" id="" rows="5"><%= comment.content %> </textarea>
+            <input class="btn" type="submit" value="save comment">
+
+        </form>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
